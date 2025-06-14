@@ -29,7 +29,7 @@ return {
 	enable_wayland = false,
 	term = "xterm-256color",
 
-	-- Keybindings (optional)
+		-- Keybindings (optional)
 	keys = {
 		{
 			key = "t",
@@ -37,13 +37,13 @@ return {
 			action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 		},
 		{
-			key = "w",
+			key = "q",
 			mods = "CTRL|SHIFT",
 			action = wezterm.action.CloseCurrentTab({ confirm = true }),
 		},
 		-- Split vertically (right side) with Ctrl+Shift+S
 		{
-			key = "s",
+			key = "j",
 			mods = "CTRL|SHIFT",
 			action = wezterm.action.SplitVertical({
 				domain = "CurrentPaneDomain",
@@ -53,35 +53,41 @@ return {
 
 		-- Split horizontally (below) with Ctrl+Shift+D
 		{
-			key = "d",
+			key = "l",
 			mods = "CTRL|SHIFT",
 			action = wezterm.action.SplitHorizontal({
 				domain = "CurrentPaneDomain",
 				args = { "C:\\Program Files\\Git\\bin\\bash.exe", "--login", "-i" },
 			}),
 		},
+		{
+			key = "w",
+			mods = "CTRL|SHIFT",
+			action = wezterm.action.CloseCurrentPane({ confirm = true }),
+		},
 
 		{
-			key = "a",
+			key = "h",
 			mods = "CTRL",
 			action = wezterm.action.ActivatePaneDirection("Left"),
 		},
 		{
-			key = "d",
+			key = "l",
 			mods = "CTRL",
 			action = wezterm.action.ActivatePaneDirection("Right"),
 		},
 		{
-			key = "w",
+			key = "k",
 			mods = "CTRL",
 			action = wezterm.action.ActivatePaneDirection("Up"),
 		},
 		{
-			key = "s",
+			key = "j",
 			mods = "CTRL",
 			action = wezterm.action.ActivatePaneDirection("Down"),
 		},
 	},
+
 	mouse_bindings = {
 		{
 			event = { Down = { streak = 1, button = "Left" } },
