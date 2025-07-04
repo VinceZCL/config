@@ -29,6 +29,11 @@ return {
 	enable_wayland = false,
 	term = "xterm-256color",
 
+	inactive_pane_hsb = {
+		saturation = 0.8,
+		brightness = 0.7,
+	},
+
 		-- Keybindings (optional)
 	keys = {
 		{
@@ -41,7 +46,7 @@ return {
 			mods = "CTRL|SHIFT",
 			action = wezterm.action.CloseCurrentTab({ confirm = true }),
 		},
-		-- Split vertically (right side) with Ctrl+Shift+S
+		-- Split vertically (right side) with Ctrl+Shift+J
 		{
 			key = "j",
 			mods = "CTRL|SHIFT",
@@ -51,7 +56,7 @@ return {
 			}),
 		},
 
-		-- Split horizontally (below) with Ctrl+Shift+D
+		-- Split horizontally (below) with Ctrl+Shift+L
 		{
 			key = "l",
 			mods = "CTRL|SHIFT",
@@ -66,24 +71,25 @@ return {
 			action = wezterm.action.CloseCurrentPane({ confirm = true }),
 		},
 
+		-- Move between panels
 		{
 			key = "h",
-			mods = "CTRL",
+			mods = "CTRL|ALT",
 			action = wezterm.action.ActivatePaneDirection("Left"),
 		},
 		{
 			key = "l",
-			mods = "CTRL",
+			mods = "CTRL|ALT",
 			action = wezterm.action.ActivatePaneDirection("Right"),
 		},
 		{
 			key = "k",
-			mods = "CTRL",
+			mods = "CTRL|ALT",
 			action = wezterm.action.ActivatePaneDirection("Up"),
 		},
 		{
 			key = "j",
-			mods = "CTRL",
+			mods = "CTRL|ALT",
 			action = wezterm.action.ActivatePaneDirection("Down"),
 		},
 	},
@@ -95,5 +101,5 @@ return {
 			action = wezterm.action.StartWindowDrag,
 		},
 	},
+	
 }
-
